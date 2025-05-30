@@ -1,0 +1,53 @@
+[package]
+name = "geekpad"
+version = "1.0.0"
+edition = "2024"
+authors = ["Eswar eswarssethu@proton.me"]
+description = "A beautiful CLI notepad with slash commands and real-time editing."
+license = "MIT"
+
+keywords = ["notepad","cli","encrypted","tui","geeks"]
+categories = ["command-line-utilities", "text-editors"]
+
+
+[dependencies]
+# CLI argument parsing
+clap = { version = "4.5", features = ["derive"] }
+
+# Terminal UI and rendering
+tui = "0.19.0"
+crossterm = "0.27"
+
+# Fancy text input (multi-line with editing)
+tui-input = "0.8"
+
+# Colored output
+colored = "2.0"
+
+# Secure password input (no echo)
+rpassword = "7.2"
+
+# Encryption: AES-GCM + password hashing
+aes-gcm = "0.10"             # Authenticated encryption
+aes = "0.8"                  # AES block cipher
+sha2 = "0.10"                # SHA-256 hash
+hmac = "0.12"                # HMAC (if needed)
+pbkdf2 = "0.12"              # Derive keys from password
+
+# Base64 encoding for ciphertext
+base64 = "0.21"
+
+# Random bytes for nonce generation
+rand = "0.8"
+
+# Unicode + emoji handling
+unicode-segmentation = "1.10"
+unicode-width = "0.1"
+
+# File and path handling
+dirs = "5.0"                 # For platform-specific note folder
+
+# Optional: Serialize themes or config files
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
